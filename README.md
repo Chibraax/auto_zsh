@@ -6,7 +6,7 @@ Works on Debian like | Arch like | Red hat like.
 The script install ```FastFetch``` too.
 
 
-# Plugins : 
+# Oh-my-zsh Plugins : 
 
   +> zsh-syntax-highlighting 
   
