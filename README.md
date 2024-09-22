@@ -5,7 +5,9 @@ Works on Debian like | Arch like | Red hat like.
 
 Plugins : 
   +> zsh-syntax-highlighting 
+  
   +> zsh-completions 
+  
   +> zsh-autosuggestions
 
 
