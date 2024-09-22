@@ -27,3 +27,4 @@ Plugins :
 
 # Before :
 
+ <img src="images/before.png" alt="before auto_zsh"> 
