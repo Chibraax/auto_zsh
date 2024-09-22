@@ -12,4 +12,5 @@ Plugins :
 # How to install ? 
 
 ```cd ~```
+
 ```git clone https://github.com/Chibraax/auto_zsh_installer```
