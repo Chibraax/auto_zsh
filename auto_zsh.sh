@@ -217,7 +217,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ;
 mv zsh* ~/.oh-my-zsh/plugins
 
 # Copy personnal theme into dir
-mv personnal.zsh-theme .oh-my-zsh/themes/;
+mv personnal.zsh-theme ~/.oh-my-zsh/themes/;
 
 # Write plug-in into .zshrc and change theme
 sed -i "s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)/g" .zshrc ;
