@@ -13,4 +13,4 @@ Plugins :
 
 ```cd ~```
 
-```git clone https://github.com/Chibraax/auto_zsh_installer```
+```git clone https://github.com/Chibraax/auto_zsh```
