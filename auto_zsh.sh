@@ -199,28 +199,31 @@ Arch)
 esac
 
 
-#Change shell
+# Change shell
 echo "Changing default shell"
 chsh -s /usr/bin/zsh ;
 
-#Install OhMyZsh
+# Install OhMyZsh
 cd  ~;
 curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh > install.sh && chmod +x install.sh
 sh install.sh --unattended
 
-#Install Plug-in
+# Install Plug-in
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ;
 git clone https://github.com/zsh-users/zsh-completions ;
 git clone https://github.com/zsh-users/zsh-autosuggestions ;
 
-#Moove plug-in into zsh dir
+# Moove plug-in into zsh dir
 mv zsh* ~/.oh-my-zsh/plugins
 
-#Write plug-in into .zshrc and change theme
+# Copy personnal theme into dir
+mv personnal.zsh-theme .oh-my-zsh/themes/;
+
+# Write plug-in into .zshrc and change theme
 sed -i "s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)/g" .zshrc ;
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="duellj"/g' .zshrc ;
 
-#Config .zshrc
+# Config .zshrc
 echo "fastfetch" >> .zshrc
 rm install.sh
 
