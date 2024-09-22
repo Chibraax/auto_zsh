@@ -23,3 +23,7 @@ Plugins :
 ```chmod +x setup.sh```
 
 ```./setup.sh```
+
+
+# Before :
+
