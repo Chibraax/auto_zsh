@@ -3,7 +3,7 @@ Bash script to install and configure zsh shell and oh_my_zsh plugins.
 
 Works on Debian like | Arch like | Red hat like.
 
-The script install <h2>FastFetch</h2> too.
+The script install ```FastFetch``` too.
 
 
 # Plugins : 
