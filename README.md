@@ -34,4 +34,4 @@ The script install ```FastFetch``` too.
 
 # After : 
 
- <img src="images/after.png" alt="after auto_zsh script "> 
+ <img src="images/after2.png" alt="after auto_zsh script "> 
