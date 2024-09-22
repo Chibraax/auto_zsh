@@ -15,6 +15,8 @@ Plugins :
 
 ```git clone https://github.com/Chibraax/auto_zsh```
 
+```cd auto_zsh```
+
 ```chmod +x setup.sh```
 
 ```./setup.sh```
