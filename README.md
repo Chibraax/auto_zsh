@@ -9,3 +9,6 @@ Plugins :
   +> zsh-autosuggestions
 
 
+# How to install ? 
+
+```cd ~```
