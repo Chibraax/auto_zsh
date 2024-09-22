@@ -223,7 +223,6 @@ sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="duellj"/g' .zshrc ;
 #Config .zshrc
 echo "fastfetch" >> .zshrc
 rm install.sh
-rm fas
 
 exec zsh -l && source .zshrc
 exit 0;
