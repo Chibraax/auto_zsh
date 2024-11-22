@@ -172,7 +172,6 @@ Debian)
         fi
 
 
-
 ;;
 Arch)
 	echo "Distro Based on Arch";
@@ -256,7 +255,15 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ;
 mv zsh* ~/.oh-my-zsh/plugins;
 
 # Copy personnal theme into dir
-mv ~/auto_zsh/chibraax.zsh-theme ~/.oh-my-zsh/themes/;
+cat <<EOF >> ~/.oh-my-zsh/themes/chibraax.zsh-theme
+# user, host, full path, and time/date
+# on two lines for easier vgrepping
+# entry in a nice long thread on the Arch Linux forums: https://bbs.archlinux.org/viewtopic.php?pid=521888#p521888
+PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;31m%}%n%{\e[1;34m%}💀%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%}⚡⚡%b%{\e[0;34m%}%B[%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%}⚡⚡%{\e[0;34m%}%B[%b%{\e[0;33m%}%!%{\e[0;34m%}%B]%b%{\e[0m%}
+%{\e[0;34m%}%B└─%B[%{\e[1;35m%}$%{\e[0;34m%}%B]%{\e[0m%}%b '
+RPROMPT='[%*]'
+PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
+EOF
 
 # Write plug-in into .zshrc and change theme
 sed -i "s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)/g" .zshrc ;
