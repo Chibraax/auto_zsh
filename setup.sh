@@ -2,8 +2,6 @@
 
 # Check OS
 
-
-
 # Red HAT
 
 if [[ -d "/etc/dnf" ]] && [[ -f "/usr/bin/dnf" ]]; then
@@ -45,6 +43,18 @@ case "$USER_DISTRO" in
 RED_HAT)
 	echo "Distro Based on RED_HAT";
 
+        # Verif sudo
+        rpm --query sudo > /dev/null;
+
+        if [[ "$?" -eq 0 ]]
+        then
+                echo "Sudo installed"
+        else
+                echo "Sudo not installed";
+                echo "Type : dnf install sudo -y, then re-launch the script";
+                exit;
+        fi
+
         #Verif git
         rpm --query git > /dev/null;
 
@@ -55,6 +65,7 @@ RED_HAT)
                 echo "Git not installed"
                 sudo dnf install git -y
         fi
+
 
         #Verif ZSH
         rpm --query zsh > /dev/null;
@@ -92,6 +103,19 @@ RED_HAT)
 Debian)
 	echo "Distro Based on Debian";
 
+        #Verif sudo
+        apt show sudo 2> /dev/null | grep -i "APT-Manual-Installed: yes" > /dev/null
+
+        if [[ "$?" -eq 0 ]]
+        then
+                echo "Sudo installed"
+        else
+                echo "Sudo not installed";
+                echo "Type : apt install sudo -y";
+                echo "then re-launch the script";
+                exit;
+        fi
+
         #Verif git
         apt show git 2> /dev/null | grep -i "APT-Manual-Installed: yes" > /dev/null
 
@@ -102,6 +126,7 @@ Debian)
                 echo "Git not installed"
                 sudo apt install git -y
         fi
+
 
         #Verif ZSH
         apt show zsh 2> /dev/null | grep -i "APT-Manual-Installed: yes" > /dev/null
@@ -151,6 +176,20 @@ Debian)
 ;;
 Arch)
 	echo "Distro Based on Arch";
+
+        # Verif sudo
+        pacman -Q sudo > /dev/null
+
+        if [[ "$?" -eq 0 ]]
+        then
+                echo "Sudo installed"
+        else
+                echo "Sudo not installed";
+                echo "Type : pacman -Syu sudo";
+                echo "then re-launch the script";
+                exit;
+        fi
+
         # Verif git
         pacman -Q git > /dev/null
 
@@ -214,10 +253,10 @@ git clone https://github.com/zsh-users/zsh-completions ;
 git clone https://github.com/zsh-users/zsh-autosuggestions ;
 
 # Moove plug-in into zsh dir
-mv zsh* ~/.oh-my-zsh/plugins
+mv zsh* ~/.oh-my-zsh/plugins;
 
 # Copy personnal theme into dir
-mv ~/auto_zsh/chibraax.zsh-theme ~/.oh-my-zsh/themes/;
+mv ~/auto_zsh_installer/chibraax.zsh-theme ~/.oh-my-zsh/themes/;
 
 # Write plug-in into .zshrc and change theme
 sed -i "s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)/g" .zshrc ;
