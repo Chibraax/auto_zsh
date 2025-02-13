@@ -3,9 +3,6 @@ Bash script to install and configure zsh shell and oh_my_zsh plugins.
 
 Works on Debian like | Arch like | Red hat like.
 
-The script install ```FastFetch``` too.
-
-
 # Oh-my-zsh Plugins : 
 
   +> zsh-syntax-highlighting 
