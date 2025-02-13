@@ -89,16 +89,6 @@ RED_HAT)
                 sudo dnf install curl -y
         fi
 
-        #Verif neofetch
-        rpm --query fastfetch > /dev/null ;
-
-        if [[ "$?" -eq 0 ]]
-        then
-                echo "Fastfetch installed"
-        else
-                echo "Fastfetch not installed"
-                sudo dnf install fastfetch -y
-        fi
 ;;
 Debian)
 	echo "Distro Based on Debian";
@@ -159,19 +149,6 @@ Debian)
         fi
 
 
-        #Verif neofetch
-        apt show fastfetch 2> /dev/null | grep -i "APT-Manual-Installed: yes" > /dev/null
-        if [[ "$?" -eq 0 ]]
-        then
-                echo "Fastfetch installed"
-        else
-                echo "Fastfetch not installed"
-                wget https://github.com/fastfetch-cli/fastfetch/releases/download/2.25.0/fastfetch-linux-amd64.deb
-                dpkg -i fastfetch-linux-amd64.deb
-                rm fastfetch-linux-amd64.deb
-        fi
-
-
 ;;
 Arch)
 	echo "Distro Based on Arch";
@@ -221,19 +198,7 @@ Arch)
                 echo "Curl not installed"
                 sudo pacman -Syu zsh;
         fi
-
-        # Verif Fastfetch
-        pacman -Q fastfetch > /dev/null
-
-        if [[ "$?" -eq 0 ]]
-        then
-                echo "Fastfetch installed"
-        else
-                echo "Fastfetch not installed"
-                sudo pacman -Syu fastfetch;
-        fi
-
-
+	
 esac
 
 
@@ -270,7 +235,6 @@ sed -i "s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="chibraax"/g' .zshrc ;
 
 # Config .zshrc
-echo "fastfetch" >> .zshrc
 rm install.sh
 
 exec zsh -l && source .zshrc
