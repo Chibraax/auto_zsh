@@ -43,17 +43,6 @@ case "$USER_DISTRO" in
 RED_HAT)
 	echo "Distro Based on RED_HAT";
 
-        # Verif sudo
-        rpm --query sudo > /dev/null;
-
-        if [[ "$?" -eq 0 ]]
-        then
-                echo "Sudo installed"
-        else
-                echo "Sudo not installed";
-                echo "Type : dnf install sudo -y, then re-launch the script";
-                exit;
-        fi
 
         #Verif git
         rpm --query git > /dev/null;
@@ -92,20 +81,7 @@ RED_HAT)
 ;;
 Debian)
 	echo "Distro Based on Debian";
-
-        #Verif sudo
-        apt show sudo 2> /dev/null | grep -i "APT-Manual-Installed: yes" > /dev/null
-
-        if [[ "$?" -eq 0 ]]
-        then
-                echo "Sudo installed"
-        else
-                echo "Sudo not installed";
-                echo "Type : apt install sudo -y";
-                echo "then re-launch the script";
-                exit;
-        fi
-
+ 
         #Verif git
         apt show git 2> /dev/null | grep -i "APT-Manual-Installed: yes" > /dev/null
 
@@ -152,19 +128,6 @@ Debian)
 ;;
 Arch)
 	echo "Distro Based on Arch";
-
-        # Verif sudo
-        pacman -Q sudo > /dev/null
-
-        if [[ "$?" -eq 0 ]]
-        then
-                echo "Sudo installed"
-        else
-                echo "Sudo not installed";
-                echo "Type : pacman -Syu sudo";
-                echo "then re-launch the script";
-                exit;
-        fi
 
         # Verif git
         pacman -Q git > /dev/null
