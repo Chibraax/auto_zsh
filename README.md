@@ -1,5 +1,6 @@
 # auto_zsh_installer
 Bash script to install and configure zsh shell and oh_my_zsh plugins.
+You need will need `sudo`.
 
 Works on Debian like | Arch like | Red hat like.
 
